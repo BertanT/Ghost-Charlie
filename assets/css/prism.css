@@ -246,8 +246,9 @@ div.code-toolbar > .toolbar > .toolbar-item > button {
 div.code-toolbar > .toolbar > .toolbar-item > button:hover,
 div.code-toolbar > .toolbar > .toolbar-item > button:focus {
 	box-shadow: none;
-	color: inherit;
+	color: #ffffff;
 	text-decoration: none;
+	cursor: pointer;
 }
 
 .command-line-prompt {

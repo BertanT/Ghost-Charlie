@@ -8637,7 +8637,7 @@ Prism.languages.nb = Prism.languages.wolfram;
 		var settings = {
 			'copy': 'Copy',
 			'copy-error': 'Press Ctrl+C to copy',
-			'copy-success': 'Copied!',
+			'copy-success': 'Copied ✓',
 			'copy-timeout': 5000
 		};
 
@@ -8698,6 +8698,14 @@ Prism.languages.nb = Prism.languages.wolfram;
 		function setState(state) {
 			linkSpan.textContent = settings[state];
 			linkCopy.setAttribute('data-copy-state', state);
+			// Change color to green when copy successfully
+			if (state === 'copy-success') {
+				linkCopy.style.color = 'rgb(' + 48 + ',' + 209 + ',' + 88 + ')';
+			} else if (state === 'copy-error') {
+				linkCopy.style.color = 'rgb(' + 255 + ',' + 69 + ',' + 59 + ')';
+			} else {
+				linkCopy.style.color = '';
+			}
 		}
 	});
 }());
