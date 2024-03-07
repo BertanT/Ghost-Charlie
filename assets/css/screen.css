@@ -56,12 +56,15 @@ production stylesheet in assets/built/screen.css
 
 :root {
     --color-white: #fff;
+    --color-off-white: #eeeded;
     --color-lighter-gray: rgb(0 0 0 / 0.05);
     --color-light-gray: #e6e6e6;
     --color-mid-gray: #ccc;
     --color-dark-gray: #444;
     --color-darker-gray: #15171a;
+    --color-really-dark-gray: #121214;
     --color-black: #000;
+    --color-site-background: var(--color-off-white);
     --color-primary-text: var(--color-darker-gray);
     --color-secondary-text: rgb(0 0 0 / 0.55);
     --color-border: rgb(0 0 0 / 0.08);
@@ -75,13 +78,16 @@ production stylesheet in assets/built/screen.css
     --grid-gap: 42px;
 }
 
-:root.has-light-text,
-:is(.gh-navigation, .gh-footer).has-accent-color {
-    --color-lighter-gray: rgb(255 255 255 / 0.1);
-    --color-darker-gray: #fff;
-    --color-secondary-text: rgb(255 255 255 / 0.64);
-    --color-border: rgb(255 255 255 / 0.15);
-    --color-dark-border: rgb(255 255 255 / 0.5);
+@media (prefers-color-scheme: dark) {
+    :root,
+    :is(.gh-navigation, .gh-footer).has-accent-color {
+        --color-lighter-gray: rgb(255 255 255 / 0.1);
+        --color-darker-gray: var(--color-off-white);
+        --color-site-background: var(--color-really-dark-gray);
+        --color-secondary-text: rgb(255 255 255 / 0.64);
+        --color-border: rgb(255 255 255 / 0.15);
+        --color-dark-border: rgb(255 255 255 / 0.5);
+    }
 }
 
 /* 2. Fonts
@@ -274,9 +280,11 @@ a:hover {
     background-color: rgb(0 0 0 / 0.065);
 }
 
-.has-light-text .gh-form:hover,
-.gh-footer.has-accent-color .gh-form:hover {
+@media (prefers-color-scheme: dark) {
+    .gh-form:hover,
+    .gh-footer.has-accent-color .gh-form:hover {
     background-color: rgb(255 255 255 / 0.15);
+    }
 }
 
 .gh-form-input {
@@ -307,15 +315,17 @@ button.gh-form-input {
     opacity: 0.5;
 }
 
-.has-light-text .gh-form-input,
-.gh-footer.has-accent-color .gh-form-input {
+@media (prefers-color-scheme: dark) {
+    .gh-form-input,
+    .gh-footer.has-accent-color .gh-form-input {
     color: #fff;
-}
+    }
 
-.has-light-text .gh-form-input::placeholder,
-.has-light-text button.gh-form-input,
-.gh-footer.has-accent-color .gh-form-input::placeholder {
-    color: rgb(255 255 255 / 0.55);
+    .gh-form-input::placeholder,
+    .button.gh-form-input,
+    .gh-footer.has-accent-color .gh-form-input::placeholder {
+        color: rgb(255 255 255 / 0.55);
+    }
 }
 
 .gh-header.is-classic.has-image .gh-form-input {

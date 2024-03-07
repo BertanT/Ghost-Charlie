@@ -93,10 +93,6 @@
                 ],
                 "default": "Logo in the middle"
             },
-            "site_background_color": {
-                "type": "color",
-                "default": "#ffffff"
-            },
             "header_and_footer_color": {
                 "type": "select",
                 "options": [
