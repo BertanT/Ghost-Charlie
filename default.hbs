@@ -24,6 +24,9 @@
     {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings, it should always be the last tag before the closing head tag --}}
     {{ghost_head}}
 
+    {{!-- Tab bar color for Safari 15+ --}}
+    <meta name="theme-color" content="{{@custom.safari_theme_color}}" media="(prefers-color-scheme: light) and (min-width: 500px)">
+
 </head>
 <body class="{{body_class}} has-serif-title has-serif-body">
 

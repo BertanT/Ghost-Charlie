@@ -101,6 +101,10 @@
                 ],
                 "default": "Background color"
             },
+            "safari_theme_color": {
+                "type": "color",
+                "default": "#FF1A75"
+            },
             "signup_heading": {
                 "type": "text",
                 "description": "Used in your footer across your theme, defaults to site title when empty"
