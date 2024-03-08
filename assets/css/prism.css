@@ -233,7 +233,8 @@ div.code-toolbar > .toolbar > .toolbar-item > button,
 div.code-toolbar > .toolbar > .toolbar-item > span {
 	color: #bbb;
 	font-size: .75em;
-	font-family: sans-serif;
+	font-family: var(--font-sans);
+	font-weight: 500;
 }
 
 div.code-toolbar > .toolbar > .toolbar-item > button {
