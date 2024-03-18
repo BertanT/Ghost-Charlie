@@ -1,6 +1,8 @@
 <footer class="gh-footer{{#match @custom.header_and_footer_color "Accent color"}} has-accent-color{{/match}} gh-outer">
     <div class="gh-footer-inner gh-inner">
         <div class="gh-footer-bar">
+
+            {{!-- Footer title at the top left --}}
             <span class="gh-footer-logo is-title">
                 {{#if @site.logo}}
                     <img src="{{@site.logo}}" alt="{{@site.title}}">
@@ -8,10 +10,13 @@
                     {{@site.title}}
                 {{/if}}
             </span>
+
+            {{!-- Secondary navigation bar --}}
             <nav class="gh-footer-menu">
                 {{navigation type="secondary"}}
             </nav>
 
+            {{!-- Social media links... --}}
             <div class="gh-footer-social-bar">
                 <a class="gh-footer-social-link" href="https://github.com/{{@custom.github_username}}" target="_blank" rel="noopener">
                     {{> "icons/github"}}
@@ -23,7 +28,10 @@
                     {{> "icons/medium"}}
                 </a>
             </div>
+            
         </div>
+
+        {{!-- Copyright with autoupdating year and powered by... text --}}
         <div class="gh-footer-credits-bar">
             <div class="gh-footer-credits-copr">
                 © {{date format="YYYY"}} {{@custom.copyright_name}}
@@ -33,5 +41,6 @@
                 <a href="https://www.raspberrypi.com" target="_blank" rel="noopener">Raspberry Pi</a>.
             </div>
         </div>
+
     </div>
 </footer>
