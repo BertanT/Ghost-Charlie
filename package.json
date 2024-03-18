@@ -101,9 +101,10 @@
                 ],
                 "default": "Background color"
             },
-            "safari_theme_color": {
-                "type": "color",
-                "default": "#FF1A75"
+            "safari_tab_bar_color": {
+                "type": "boolean",
+                "default": true,
+                "description": "Decorates the tab bar on Safari 15+ with your theme color in light mode (iPad and Mac only)"
             },
             "signup_heading": {
                 "type": "text",
@@ -112,6 +113,22 @@
             "signup_subheading": {
                 "type": "text",
                 "description": "Defaults to site description when empty"
+            },
+            "github_username": {
+                "type": "text",
+                "description": "Used for the social icon in the footer"
+            },
+            "linkedin_username": {
+                "type": "text",
+                "description": "Used for the social icon in the footer (Do not include /in/)"
+            },
+            "medium_username": {
+                "type": "text",
+                "description": "Used for the social icon in the footer (Do not include @)"
+            },
+            "copyright_name": {
+                "type": "text",
+                "description": "The name used in the copright notice in the footer"
             },
             "header_style": {
                 "type": "select",

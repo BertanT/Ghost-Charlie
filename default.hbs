@@ -25,7 +25,9 @@
     {{ghost_head}}
 
     {{!-- Tab bar color for Safari 15+ --}}
-    <meta name="theme-color" content="{{@custom.safari_theme_color}}" media="(prefers-color-scheme: light) and (min-width: 500px)">
+    {{#if @custom.safari_tab_bar_color}}
+    <meta name="theme-color" content="{{@site.accent_color}}" media="(prefers-color-scheme: light) and (min-width: 500px)">
+    {{/if}}
 
 </head>
 <body class="{{body_class}} has-serif-title has-serif-body">
@@ -51,4 +53,12 @@
 {{ghost_foot}}
 
 </body>
+
+{{!--  Print kitty on the console on the about page. Comment out if you have performance concerns. --}}
+<script>
+    if (window.location.href == "{{@site.url}}/about/") {
+        printKitty();
+    }
+</script>
+
 </html>
