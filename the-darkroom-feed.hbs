@@ -1,0 +1,69 @@
+{ "photos": [
+{{#get "posts" filter="custom_template:'custom-the-darkroom'" include="authors,tags"}}
+    {{#foreach posts}}
+    {{^has number="1"}},{{/has}}
+    {
+        "slug": {{#if slug}}"{{slug}}"{{else}}null{{/if}},
+        "id": {{#if id}}"{{id}}"{{else}}null{{/if}},
+        "uuid": {{#if uuid}}"{{uuid}}"{{else}}null{{/if}},
+        "title": {{#if title}}"{{title}}"{{else}}null{{/if}},
+        "body": "{{html}}",
+        "photo": {{#if feature_image}}"{{feature_image}}"{{else}}null{{/if}},
+        "photo_alt": {{#if feature_image_alt}}"{{feature_image_alt}}"{{else}}null{{/if}},
+        "photo_caption": {{#if feature_image_caption}}"{{feature_image_caption}}"{{else}}null{{/if}},
+        "featured": {{#if featured}}{{featured}}{{else}}false{{/if}},
+        "created_at": {{#if created_at}}"{{created_at}}"{{else}}null{{/if}},
+        "updated_at": {{#if updated_at}}"{{updated_at}}"{{else}}null{{/if}},
+        "published_at": {{#if published_at}}"{{published_at}}"{{else}}null{{/if}},
+        "url": {{#if url}}"{{url}}"{{else}}null{{/if}},
+
+        "primary_tag": {{#if primary_tag}}{
+            {{#primary_tag}}
+                "id": {{#if id}}"{{id}}"{{else}}null{{/if}},
+                "name": {{#if name}}"{{name}}"{{else}}null{{/if}},
+                "slug": {{#if slug}}"{{slug}}"{{else}}null{{/if}},
+                "description": {{#if description}}"{{description}}"{{else}}null{{/if}},
+                "feature_image": {{#if feature_image}}"{{feature_image}}"{{else}}null{{/if}},
+                "accent_color": {{#if accent_color}}"{{accent_color}}"{{else}}null{{/if}},
+                "url": {{#if url}}"{{url}}"{{else}}null{{/if}}
+            {{/primary_tag}}
+        }{{else}}null{{/if}},
+
+        "tags": [
+            {{#foreach tags}}
+            {{^has number="1"}},{{/has}}
+            {
+                "id": {{#if id}}"{{id}}"{{else}}null{{/if}},
+                "name": {{#if name}}"{{name}}"{{else}}null{{/if}},
+                "slug": {{#if slug}}"{{slug}}"{{else}}null{{/if}},
+                "description": {{#if description}}"{{description}}"{{else}}null{{/if}},
+                "feature_image": {{#if feature_image}}"{{feature_image}}"{{else}}null{{/if}},
+                "accent_color": {{#if accent_color}}"{{accent_color}}"{{else}}null{{/if}},
+                "url": {{#if url}}"{{url}}"{{else}}null{{/if}}
+            }
+            {{/foreach}}
+        ],
+
+        "primary_photographer": {{#if primary_author}}{
+            {{#primary_author}}
+            "id": {{#if id}}"{{id}}"{{else}}null{{/if}},
+            "name": {{#if name}}"{{name}}"{{else}}null{{/if}},
+            "slug": {{#if slug}}"{{slug}}"{{else}}null{{/if}},
+            "profile_image": {{#if profile_image}}"{{profile_image}}"{{else}}null{{/if}},
+            "cover_image": {{#if cover_image}}"{{cover_image}}"{{else}}null{{/if}},
+            "bio": {{#if bio}}"{{bio}}"{{else}}null{{/if}},
+            "website": {{#if website}}"{{website}}"{{else}}null{{/if}},
+            "location": {{#if location}}"{{location}}"{{else}}null{{/if}},
+            "facebook": {{#if facebook}}"{{facebook}}"{{else}}null{{/if}},
+            "twitter": {{#if twitter}}"{{twitter}}"{{else}}null{{/if}},
+            "url": {{#if url}}"{{url}}"{{else}}null{{/if}}
+            {{/primary_author}}
+        }{{else}}null{{/if}},
+
+        "custom_meta": {
+            {{{custom_excerpt}}}
+        }
+    }
+    {{/foreach}}
+{{/get}}
+]}
